@@ -1,0 +1,29 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    
+}
+body{
+    font-family: 'Times New Roman', Times, serif;
+}
+header{
+    background-color:  #80A9E6;  
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+h1{
+    padding: 20px 0;
+    font-weight:300;
+}
+
+
+
+
+
+@media screen and (max-width: 400px) {
+    h1{
+       font-size: 28px;
+    }
+  }
