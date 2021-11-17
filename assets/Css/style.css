@@ -1,29 +1,72 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    
+:root {
+    --display: flex;
+    --column: column;
+    --center: center;
+
 }
-body{
-    font-family: 'Times New Roman', Times, serif;
+header {
+    display: var(--display);
+    flex-direction: var(--column);
+    align-items: var(--center);
+    background-color:maroon;
+    color: white;
 }
-header{
-    background-color:  #80A9E6;  
-    display: flex;
-    flex-wrap: wrap;
+h1 {
+    font-size: 40px;
+    padding: 20px;
+}
+#headerP {
+    font-size: 30px;
+}
+aside {
+    display: var(--display);
+    flex-direction: column;
+    align-items: var(--center);
+    float: left;
+    background-color:lightsteelblue;
+    margin-top: 10px;
+}
+main {
+    display: var(--display);
+}
+.currentWeather {
+    display: var(--display);
+    flex-direction: var(--column);
+    align-items: var(--center);
+    margin-top: 10px;
+}
+.iconSizing {
+    width: 80x;
+    height: 80px;
+}
+/* colors for uvIndex*/
+.favorable {
+    background-color: lightgreen;
+}
+.moderate {
+    background-color: yellow;
+}
+.severe {
+    background-color: red;
+}
+.row {
     justify-content: center;
 }
-h1{
-    padding: 20px 0;
-    font-weight:300;
+.card-body {
+    background-color: #90e0ef;
 }
-
-
-
-
-
-@media screen and (max-width: 400px) {
-    h1{
-       font-size: 28px;
-    }
-  }
+.name {
+    font-size: 25px;
+    color: white;
+    background-color: #0077b6;
+}
+.space {
+    margin: 0 5px;
+    background-color: #0077b6;
+}
+.hidden {
+    visibility: hidden;
+}
+span {
+    border-radius: 5px;
+}
