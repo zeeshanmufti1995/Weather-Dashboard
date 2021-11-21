@@ -49,6 +49,7 @@ function fetchWeather() {
         .then(function(response) {
             return response.json();
         })
+    
         .then(function(data) {
             
             var nameValue = data.name;
@@ -62,4 +63,27 @@ function fetchWeather() {
                     .then(function(response) {
                         return response.json();
                     })
-                    .then(function(data) )}
+                    .then(function(data) {
+                    var weatherDesc = data.current.weather[0].main;
+                    $('.weather').text('Weather: ' + weatherDesc);
+                    var dateValue = data.current.dt;
+                    var newDate = new Date(dateValue*1000).toLocaleDateString('en-US');
+                    $('.name').append(' (' + newDate + ')');
+                    var weatherIcon = data.current.weather[0].icon;
+                    $('.name').append('<img class="weatherIcon iconSizing">');
+                    $('.weatherIcon').attr('src', 'http://openweathermap.org/img/wn/' + weatherIcon + '@2x.png');
+                    $('.weatherIcon').attr('alt', 'Weather Icon');
+                    var tempValue = data.current.temp;
+                    $('.temp').text('Temperature: ' + Math.round(tempValue) + '° F');
+                    var humidityValue = data.current.humidity;
+                    $('.humidity').text('Humidity: ' + humidityValue + '%');
+                    var uvValue = data.current.uvi;
+                    $('span').text(uvValue);
+                    var windValue = data.current.wind_speed;
+                    $('.wind').text('Wind Speed: ' + windValue + 'mph');
+                    
+                })
+            }
+        
+        
+        })
