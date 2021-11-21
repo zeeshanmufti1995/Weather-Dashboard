@@ -27,3 +27,39 @@ function renderSearches() {
         })
     }
 }
+
+//adds text to array, calls fetchWeather, calls storing function and render function
+searchBtn.on('click', function(event) {
+    event.preventDefault();
+
+    var searchText = inputValue.val();
+    if (searchText === "") {
+        return;
+    }
+    searches.push(searchText);
+
+    fetchWeather();
+    renderSearches();
+  
+})
+
+//uses the input value, gets data from weather API on search button click.
+function fetchWeather() {
+    fetch('https://api.openweathermap.org/data/2.5/weather?q='+ inputValue.val() + '&units=imperial&id=524901&appid=0fe3cfd026afb76b1605f15581136ad8')
+        .then(function(response) {
+            return response.json();
+        })
+        .then(function(data) {
+            
+            var nameValue = data.name;
+            $('.name').text(nameValue);
+            var latitude = data.coord.lat;
+            var longitude = data.coord.lon;
+
+
+            function uviFetch() {
+                fetch('https://api.openweathermap.org/data/2.5/onecall?lat=' + latitude +'&lon=' + longitude + '&units=imperial&id=524901&appid=0fe3cfd026afb76b1605f15581136ad8')
+                    .then(function(response) {
+                        return response.json();
+                    })
+                    .then(function(data) )}
