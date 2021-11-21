@@ -64,9 +64,7 @@ main {
     margin: 0 5px;
     background-color: #0077b6;
 }
-.hidden {
-    visibility: hidden;
-}
+
 span {
     border-radius: 5px;
 }
